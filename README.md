@@ -5,11 +5,8 @@ This Freqtrade modification is intended to help with the Kucoin candle endpoint 
 In order to build locally complete the following: 
 
 git clone https://github.com/b-zig/freqtrade.git<br>
-cd freqtrade
-docker build \
-  --no-cache \
-  --pull \
-  -t freqtradeorg/freqtrade:kucoincustom .
+cd freqtrade<br>
+docker build --no-cache --pull -t freqtradeorg/freqtrade:kucoincustom .
 
 In your docker-compose.yml be sure to update your image to: freqtradeorg/freqtrade:kucoincustom
 
