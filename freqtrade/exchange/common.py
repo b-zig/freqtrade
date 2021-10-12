@@ -83,9 +83,13 @@ def retrier_async(f):
                 count -= 1
                 kwargs.update({'count': count})
                 if isinstance(ex, DDosProtection):
-                    backoff_delay = calculate_backoff(count + 1, API_RETRY_COUNT)
-                    logger.info(f"Applying DDosProtection backoff delay: {backoff_delay}")
-                    await asyncio.sleep(backoff_delay)
+                    if "kucoin" in str(ex) and "429000" in str(ex):
+                        logger.warning(f"Kucoin 429 error, keeping count the same.")
+                        count += 1
+                    else:
+                        backoff_delay = calculate_backoff(count + 1, API_RETRY_COUNT)
+                        logger.info(f"Applying DDosProtection backoff delay: {backoff_delay}")
+                        await asyncio.sleep(backoff_delay)
                 return await wrapper(*args, **kwargs)
             else:
                 logger.warning('Giving up retrying: %s()', f.__name__)
