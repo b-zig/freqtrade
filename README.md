@@ -13,8 +13,9 @@ docker build \
 
 In your docker-compose.yml be sure to update your image to: freqtradeorg/freqtrade:kucoincustom
 
+<i> PLEASE NOTE: Pandas-TA is included in this image... YOU DO NOT need to do a custom build dockerfile to install it</i>
+
 <h2>EXAMPLE:</h2>
-<i> PLEASE NOTE, Pandas-TA is included in this image... YOU DO NOT need to do a custome build dockerfile to install it</i>
 <br>
 ---<br>
 version: '3'<br>
