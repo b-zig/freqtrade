@@ -1,3 +1,15 @@
+Special thanks to @Tiddes on the NFI discord for the python updates. 
+
+This Freqtrade modification is intended to help with the Kucoin candle endpoint rate limiting beyond their normal constraints. 
+
+In order to build locally complete the following: 
+
+
+
+
+
+
+
 # ![freqtrade](https://raw.githubusercontent.com/freqtrade/freqtrade/develop/docs/assets/freqtrade_poweredby.svg)
 
 [![Freqtrade CI](https://github.com/freqtrade/freqtrade/workflows/Freqtrade%20CI/badge.svg)](https://github.com/freqtrade/freqtrade/actions/)
